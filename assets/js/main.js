@@ -18,10 +18,28 @@ let total = Km * price;
 /* Discount 20% */
 
 let Discount20 = total * 0.2;
+let FinalPrice20 = total - Discount20;
+
 
 /* Discount 40% */
 
 let Discount40 = total * 0.4;
+let FinalPrice40 = total - Discount40;
 
 
+/* Condizionali */
+
+if (Age <18){
+    FinalPrice20
+}
+
+else if (Age >= 65){
+    FinalPrice40
+}
+
+else{
+    total
+}
+
+document.getElementById('Totale').innerHTML = 'Your Amount is' + total + '€';
 
