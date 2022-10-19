@@ -17,4 +17,11 @@ let total = Km * price;
 
 /* Discount 20% */
 
+let Discount20 = total * 0.2;
+
+/* Discount 40% */
+
+let Discount40 = total * 0.4;
+
+
 
