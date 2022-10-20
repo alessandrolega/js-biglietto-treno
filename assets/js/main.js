@@ -7,39 +7,30 @@ L'output del prezzo finale va messo fuori in forma umana (con massimo due decima
 
 /* KM ED ETA'*/
 
-let Km = parseInt(prompt("How Many Km Do You Want To Travel?"));
+let Km = parseInt(prompt("How Many Km?"));
 let Age = parseInt(prompt("How Old Are You?"));
 
-/*PREZZO DEL BIGLIETTO PER KM*/
 
-const price = 0.21;
-let total = Km * price;
+// PREZZO PER KM //
 
-/* Discount 20% */
+let Price = Km * 0.21;
 
-let Discount20 = total * 0.2;
-let FinalPrice20 = total - Discount20;
+// DISCOUNT 20 //
 
+let Discount20 = (Price * 0.8).toFixed(2);
 
-/* Discount 40% */
+// DISCOUNT 40 //
 
-let Discount40 = total * 0.4;
-let FinalPrice40 = total - Discount40;
+let Discount40 = (Price * 0.6).toFixed(2);
 
+// CONDIZIONALI //
 
-/* Condizionali */
+if (Age < 18) {
+    document.getElementById('Totale').innerHTML = "Your Price Is" + Discount20 + "€";
 
-if (Age <18){
-    FinalPrice20
+}   else if (Age >= 65) {
+    document.getElementById('Totale').innerHTML = "Your Price Is" + Discount40 + "€";
+
+}   else {
+    document.getElementById('Totale').innerHTML = "Your Price Is" + Price + "€";
 }
-
-else if (Age >= 65){
-    FinalPrice40
-}
-
-else{
-    total
-}
-
-document.getElementById('Totale').innerHTML = 'Your Amount is' + total + '€';
-
